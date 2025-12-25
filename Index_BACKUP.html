@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MADXROHIT</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Orbitron',sans-serif}
+body{background:#000;color:#00ffcc;overflow-x:hidden}
+
+/* SPLASH */
+#splash{
+  position:fixed;inset:0;background:#000;z-index:9999;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  animation:fadeOut 1s ease forwards;animation-delay:3s
+}
+@keyframes fadeOut{to{opacity:0;visibility:hidden}}
+.splash-logo{font-size:12vw;letter-spacing:.15em;text-shadow:0 0 20px #00ffcc,0 0 60px #00ffcc}
+.splash-sub{letter-spacing:3px;opacity:.7}
+
+/* BACKGROUND */
+body::before{
+  content:"";position:fixed;width:200%;height:200%;
+  background:
+    radial-gradient(circle at 20% 20%, #00ffcc22, transparent 40%),
+    radial-gradient(circle at 80% 80%, #00ffcc22, transparent 40%),
+    repeating-linear-gradient(135deg,#0a0a0a 0,#0a0a0a 25px,#000 25px,#000 50px);
+  animation:bgMove 30s linear infinite;
+  transform:rotate(15deg);z-index:-1
+}
+@keyframes bgMove{from{transform:translateX(0) rotate(15deg)}to{transform:translateX(-50%) rotate(15deg)}}
+
+/* TOP BAR */
+.topbar{
+  position:sticky;top:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 18px;
+  backdrop-filter:blur(8px);
+  background:rgba(0,0,0,.7);
+  border-bottom:1px solid #00ffcc44
+}
+.menu{width:30px}
+.menu span{display:block;height:3px;margin:6px 0;background:#00ffcc}
+.brand{font-size:13px;letter-spacing:2px;text-align:center;flex:1}
+
+/* HERO */
+.hero-info{text-align:center;padding:50px 20px 20px}
+.hero-info h1{font-size:clamp(1.8rem,6vw,3rem)}
+.hero-info p{max-width:600px;margin:10px auto 25px;font-size:14px;opacity:.8}
+.stats{display:flex;justify-content:center;gap:30px;flex-wrap:wrap}
+.stat{border:1px solid #00ffcc55;padding:15px 25px;border-radius:15px}
+
+/* COMMON */
+.section-title{text-align:center;margin:40px 0 15px;letter-spacing:3px}
+.ribbon-card{
+  background:rgba(0,0,0,.85);
+  border:1px solid #00ffcc55;
+  padding:14px;border-radius:14px;
+  text-align:center;font-weight:bold;
+  box-shadow:0 0 15px #00ffcc22;
+  transition:.3s
+}
+.ribbon-card:hover{transform:translateY(-6px) scale(1.05);box-shadow:0 0 25px #00ffcc}
+
+/* ABOUT */
+.about{text-align:center;padding:10px 20px}
+.profile-img{
+  width:120px;height:120px;border-radius:50%;
+  border:2px solid #00ffcc;box-shadow:0 0 25px #00ffcc
+}
+.about-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:15px;margin-top:15px
+}
+
+/* SKILLS */
+.skills-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+  gap:15px;padding:0 20px
+}
+
+/* APPS */
+.apps-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;padding:20px
+}
+.card{position:relative}
+.icon{
+  width:80px;height:80px;border-radius:18px;
+  margin:10px auto;box-shadow:0 0 20px #00ffcc55
+}
+.badge{
+  position:absolute;top:10px;right:-30px;
+  background:#00ffcc;color:#000;
+  font-size:10px;font-weight:bold;
+  padding:5px 35px;transform:rotate(45deg)
+}
+.meta{font-size:12px;opacity:.85;margin:6px 0}
+.buttons{display:flex;gap:10px}
+.buttons a{
+  flex:1;padding:8px;border-radius:10px;
+  font-size:12px;font-weight:bold;text-decoration:none
+}
+.download{background:#00ffcc;color:#000}
+.study{border:1px solid #00ffcc;color:#00ffcc}
+
+/* SOCIALS */
+.socials{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:15px;
+  padding:20px
+}
+.social-card{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px;
+  border-radius:14px;
+  border:1px solid #00ffcc55;
+  text-decoration:none;
+  color:#00ffcc;
+  box-shadow:0 0 15px #00ffcc22;
+  transition:.3s
+}
+.social-card img{width:26px}
+.social-card:hover{
+  background:#00ffcc;
+  color:#000;
+  box-shadow:0 0 25px #00ffcc
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  font-size:12px;
+  opacity:.7;
+  border-top:1px solid #00ffcc33
+}
+</style>
+</head>
+
+<body>
+
+<!-- SPLASH -->
+<div id="splash">
+  <div class="splash-logo">MADX</div>
+  <div class="splash-sub">HACKING THE SYSTEM...</div>
+</div>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="menu"><span></span><span></span><span></span></div>
+  <div class="brand">MADXROHIT – All Institute Under One Universe</div>
+  <div style="width:30px"></div>
+</div>
+
+<!-- HERO -->
+<div class="hero-info">
+  <h1>Complete Learning Platform Suite</h1>
+  <p>Access all premium educational applications in one place.</p>
+  <div class="stats">
+    <div class="stat">15<br>Premium Apps</div>
+    <div class="stat">50K+<br>Users</div>
+    <div class="stat">24/7<br>Support</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<h3 class="section-title">About Developer</h3>
+<div class="about">
+  <img class="profile-img" src="https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/1608433c03fe7040cfe5a2bcb33177d831497689/ROHIT_image.png">
+  <h2>MADXROHIT</h2>
+  <div class="about-grid">
+    <div class="ribbon-card">🎓 Class 12th (PCMB)</div>
+    <div class="ribbon-card">📍 Bihar, India</div>
+    <div class="ribbon-card">🎂 23 August</div>
+    <div class="ribbon-card">🚀 Founder - MADXROHIT</div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<h3 class="section-title">Skills</h3>
+<div class="skills-grid">
+  <div class="ribbon-card">HTML</div>
+  <div class="ribbon-card">CSS</div>
+  <div class="ribbon-card">JavaScript</div>
+  <div class="ribbon-card">UI / UX</div>
+  <div class="ribbon-card">App Development</div>
+  <div class="ribbon-card">Python</div>
+</div>
+
+<!-- APPS -->
+<h3 class="section-title">Premium Apps</h3>
+<div id="appList" class="apps-grid"></div>
+
+<!-- SOCIAL MEDIA -->
+<h3 class="section-title">Connect With Us</h3>
+<div class="socials">
+  <a class="social-card" href="https://whatsapp.com/channel/0029VakDgLmBA1f6TRykhY0E" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"> WhatsApp
+  </a>
+  <a class="social-card" href="https://t.me/+DVRwarcX1bk0NGNl" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png"> Telegram
+  </a>
+  <a class="social-card" href="https://instagram.com/madxrohit7" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"> Instagram
+  </a>
+  <a class="social-card" href="https://youtube.com/@madxrohit7" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"> YouTube
+  </a>
+</div>
+
+<footer>© COPYRIGHT PROTECTED | FREE FOR ALL</footer>
+
+<script>
+const studyLink="https://whatsapp.com/channel/0029VaoR6zDG8l5720JUZf1T";
+const apps=[
+["Testbook","https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/1b9253f9b1de5baaa93e0cd4f5a20429103124bd/Testbook_image.Png","https://github.com/MADXROHIT/APP-STORE-MADXROHIT-/raw/refs/heads/main/Testbook%20(2).apk"],
+["KD LIVE","https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/7845d02bc0ad95a3da63f25f149fed26bb308bc0/kdlive.png","https://github.com/MADXROHIT/APP-STORE-MADXROHIT-/raw/refs/heads/main/KD%20Live%20(3).apk"],
+["Selection Way","https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/1201c176a8af237845d007591b022b5f5e4eb53f/Selection_way.Png","https://github.com/MADXROHIT/APP-STORE-MADXROHIT-/raw/refs/heads/main/Selection%20way%20(4)%20(1).apk"],
+["Careerwill","https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/39436ac66b7c7539dcb398d0e586ed26ce52b001/cw_image_.png","https://bit.ly/3XIeWWU"],
+["Next Topper","https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/c58128ccf02bd1d6979ab2fab8f2df3ee4442d30/next_topper_image.png","https://github.com/MADXROHIT/APP-STORE-MADXROHIT-/raw/refs/heads/main/Next%20Topper%20(2).apk"],
+["Study IQ","https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/6b8fa461ef695e8b25c259210e138ba1d42a8122/studyiq_image_.png","https://github.com/MADXROHIT/APP-STORE-MADXROHIT-/raw/refs/heads/main/Study%20IQ%20MADXROHIT"],
+["Rojgar With Ankit","https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/d41a6db4d142e26535f3fe3e536a7520dee20cae/rwa_image_.png","https://github.com/MADXROHIT/APP-STORE-MADXROHIT-/raw/refs/heads/main/Rojgar%20with%20ankit%20(9).apk"],
+["CDS Journey","https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/105e804cde37f48520e11a9fc2280c7918809a24/cds_journey%20_image.Png","https://github.com/MADXROHIT/APP-STORE-MADXROHIT-/raw/refs/heads/main/Cds%20Journey%20(2).apk"],
+["Khan Global Studies","https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/7db44d7e2bbefa7150c492453a4dadbb59693b63/kgs_image_.png","https://github.com/MADXROHIT/APP-STORE-MADXROHIT-/raw/main/KGS.apk"],
+["UC Live Rani Mam","https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/f940df132047fe8a553ee8321e591bcbcfc0e0b9/uc_live_rani_mam_image_.png","https://t.me/madxrohit"],
+["Gyanbindu","https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/43752aaf2198a001e2bbd390012e00048cd6ca15/gyanbindu_image_.png","https://github.com/MADXROHIT/APP-STORE-MADXROHIT-/raw/refs/heads/main/Gyanbindu%20(4).apk"],
+["GK GS Masti","https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/82257da6bc9c75a5afa352f6ab235de3e2912241/gkgsmasti_image.png","https://t.me/madxrohit"],
+["Physics Wallah","https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/8306e5158364e0b380b6ed984e9a1c01d7b14aa0/pw_image.png","https://github.com/MADXROHIT/APP-STORE-MADXROHIT-/raw/refs/heads/main/PW%20(5).apk"],
+["Disha Online Class","https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/ec04530eb48df0bb1319ef610b4aca4da56a221b/disha_onlineclass_mage.png","https://t.me/madxrohit"],
+["Unacademy","https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/105e804cde37f48520e11a9fc2280c7918809a24/unacademy-image_.png","https://github.com/MADXROHIT/APP-STORE-MADXROHIT-/raw/refs/heads/main/Unacademy%20(1).apk"]
+];
+
+const list=document.getElementById("appList");
+apps.forEach(app=>{
+  const size=(Math.random()*5+10).toFixed(1);
+  const downloads=Math.floor(Math.random()*1000+2000);
+  list.innerHTML+=`
+  <div class="ribbon-card card">
+    <div class="badge">NEW</div>
+    <img src="${app[1]}" class="icon">
+    <h3>${app[0]}</h3>
+    <div class="meta">💾 ${size} MB &nbsp; ⬇️ ${downloads}</div>
+    <div class="buttons">
+      <a class="download" href="${app[2]}" target="_blank">Download</a>
+      <a class="study" href="${studyLink}" target="_blank">Let's Study</a>
+    </div>
+  </div>`;
+});
+</script>
+
+</body>
+</html>
